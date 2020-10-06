@@ -58,12 +58,24 @@ export default () => {
 
   [].forEach.call(otherServices, servicesPoint => {
     servicesPoint.onclick = () => {
+
       if (servicesPoint.checked) {
+        const listPoint = document.createElement("LI");
+        listPoint.innerHTML = servicesPoint.getAttribute('value');
+        resulList.appendChild(listPoint);
+
         costOther = +costOther + +servicesPoint.getAttribute('data-price');
         price.innerHTML = 'от' + ' ' + (+costDefault + +costOther) + ' ' + 'руб.';
       }
 
       if (!servicesPoint.checked) {
+        const realList = document.querySelectorAll('#resultList li');
+
+        [].forEach.call(realList, e => {
+          if (e.innerHTML == servicesPoint.getAttribute('value')) resulList.removeChild(e);
+        });
+
+
         costOther = +costOther - +servicesPoint.getAttribute('data-price');
         price.innerHTML = 'от' + ' ' + (+costDefault + +costOther) + ' ' + 'руб.';
       }
