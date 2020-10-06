@@ -5,12 +5,12 @@
 import { freeze, unfreeze } from '../../blocks/js-functions/freeze';
 
 export default () => {
-  const close = document.querySelectorAll('.popup-form .close');
+  const close = document.querySelectorAll('.popup .close');
   const closeButton = document.querySelector('#close');
   const openBtns = document.querySelectorAll('[data-open]');
-  const overlay = document.querySelector('.overlay');
+  const popupsWrap = document.querySelector('.popups');
   const popups = document.querySelectorAll('[data-popup]');
-  const closeTargetArr = [closeButton, overlay];
+  const closeTargetArr = [closeButton, popupsWrap];
 
   [].forEach.call(close, item => closeTargetArr.push(item));
 
@@ -23,7 +23,7 @@ export default () => {
           popup.getAttribute('data-popup') === btn.getAttribute('data-open')
         ) {
           freeze();
-          overlay.classList.add('is-active');
+          popupsWrap.classList.add('is-active');
           popup.classList.add('is-active');
         }
       });
@@ -34,7 +34,7 @@ export default () => {
     trg.onclick = e => {
       if (e.target == trg) {
         unfreeze();
-        overlay.classList.remove('is-active');
+        popupsWrap.classList.remove('is-active');
 
         [].forEach.call(popups, popup => {
           popup.classList.remove('is-active');

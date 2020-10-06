@@ -1,13 +1,117 @@
-// @import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
-
 .popups {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  background: rgba(225, 225, 225, 0.5);
+  height: 100vh;
+  overflow-y: auto;
+
+  &.is-active {
+    display: block;
+  }
 }
 
-.fancybox-close-small:focus::after {
-  outline: none;
-}
+.popup {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border-radius: 6px;
+  z-index: 7;
+  text-align: center;
+  padding: 80px 40px;
 
-.fancybox-enabled {
-  overflow: initial;
+  @include screen(md, max) {
+    width: 95%;
+    padding: 40px 20px;
+    top: 30px;
+
+    br {
+      display: none !important;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 30px;
+
+    span {
+      color: $color-brend;
+    }
+
+    &--thanks {
+      font-size: 27px;
+    }
+  }
+
+  &__messadge {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 55px;
+
+    span {
+      font-weight: 700;
+      color: $color-brend;
+    }
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 21px;
+    color: #bfd0e0;
+    margin-top: 20px;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-brend;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  form {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .button {
+      margin-top: 30px;
+    }
+  }
+
+  &.is-active {
+    display: block;
+  }
 }

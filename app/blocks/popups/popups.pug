@@ -2,6 +2,34 @@ mixin popups()
   +b.popups&attributes(attributes)
     block
 
-mixin popup()
+mixin popup-form()
   +b.popup&attributes(attributes)
-    block
+    .close
+    +e.title Оставьте заявку и мы свяжемся
+      br
+      | с Вами в
+      span #{' '} течение 3-х минут!
+
+    +form
+      +inputbox
+        +input(type="text" placeholder="Ваше имя")
+      +inputbox
+        +input(type="text" placeholder="Телефон")
+      +button.--full Оставить заявку
+
+    +e.descr Нажимая кнопку “Оставить заявку”, я даю согласие
+      br
+      | на обработку персональных данных
+
+mixin popup-thanks()
+  +b.popup&attributes(attributes)
+    .close
+    +e.title.--tahnks Спасибо!
+
+    +e.messadge Ваша заявка отправлена на сайт.
+      br
+      | Мы перезвоним
+      span #{' '} в течение
+        br
+        | 3-х минут!
+    +button#close Готово

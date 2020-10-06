@@ -7,7 +7,7 @@ import header from './common/header';
 import tabs from '../blocks/tabs/tabs';
 import scroll from './common/scroll';
 import calck from './common/calck';
-// import popup from './common/popup';
+import popup from './common/popup';
 
 $(() => {
   svg4everybody();
@@ -19,5 +19,5 @@ $(() => {
   tabs();
   scroll();
   calck();
-  // popup();
+  popup();
 });
