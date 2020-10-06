@@ -13,7 +13,7 @@ $('.select').each(function() {
   $this.wrap('<div class="select"></div>');
   $('<div>', {
       class: 'select__gap',
-      text: 'Санкт-Петербург'
+      text: 'Москва'
   }).insertAfter($this);
 
   var selectGap = $this.next('.select__gap'),
