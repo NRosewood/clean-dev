@@ -30,4 +30,20 @@ export default () => {
     counterResult.innerHTML = +counterResult.innerHTML + 1;
     roomsCount.innerHTML = counterResult.innerHTML + ' ' + 'ком.';
   };
+
+  /* LOGIC STEPS */
+
+  const step = document.querySelectorAll('.step');
+  const formBnt = document.querySelectorAll('.form-btn');
+  const nextStep = document.querySelector('#nextStep');
+
+  nextStep.onclick = () => {
+    [].forEach.call(step, elem => {
+      elem.classList.toggle('is-active');
+    });
+
+    [].forEach.call(formBnt, elem => {
+      elem.classList.toggle('is-active');
+    });
+  };
 };

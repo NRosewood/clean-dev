@@ -33,14 +33,12 @@
         }
       }
 
-      .step-first,
-      .step-second {
+      .step {
         display: none;
-      }
 
-      .step-first.is-active,
-      .step-second.is-active {
-        display: block;
+        &.is-active {
+          display: block;
+        }
       }
     }
 
@@ -59,13 +57,14 @@
     #{$b}__group {
       display: flex;
       flex-direction: column;
-      min-width: 329px;
 
       &:not(:last-child) {
         margin-bottom: 40px;
       }
 
       @include screen(xs, min) {
+        min-width: 329px;
+
         &--row {
           flex-direction: row;
           align-items: center;

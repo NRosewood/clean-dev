@@ -6,7 +6,7 @@ mixin calculater()
 
         form
           +e.steps
-            .step-first.is-active
+            .step.is-active
               +e.group
                 h5 Тип уборки
                 label
@@ -63,7 +63,7 @@ mixin calculater()
                     +icon('check')
                   span Требуется химчистка
 
-            .step-second
+            .step
               +e.group
                 h5 Контактные данные:
                 .form__inputbox
@@ -87,5 +87,5 @@ mixin calculater()
             .payment
               span Итого
               span#price от 1 490 руб.
-            span.form-btn.is-active Следующий шаг
+            span.form-btn.is-active#nextStep Следующий шаг
             input(type="submit" value="Заказать").form-btn
