@@ -15,14 +15,22 @@
     padding: 50px;
     overflow: hidden;
 
+    @include screen(lg, max) {
+      padding: 20px;
+    }
+
     form {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       margin-top: 50px;
 
-      @include screen(md, max) {
+      @include screen(lg, max) {
         flex-direction: column;
+
+        #{$b}__steps {
+          width: 100%;
+        }
       }
 
       .step-first,
@@ -57,14 +65,16 @@
         margin-bottom: 40px;
       }
 
-      &--row {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+      @include screen(xs, min) {
+        &--row {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
 
-        h5 + div,
-        h5 + label {
-          margin-top: 0;
+          h5 + div,
+          h5 + label {
+            margin-top: 0;
+          }
         }
       }
 
@@ -214,7 +224,7 @@
       margin-right: auto;
       margin-top: 30px;
       font-weight: 700;
-      padding: 14px 62px;
+      padding: 14px;
       width: 247px;
       border-radius: 5px;
       font-size: 14px;
@@ -232,6 +242,20 @@
       &.is-active {
         display: block;
       }
+
+      @include screen(sm, max) {
+        width: 100%;
+      }
+    }
+
+    @include screen(lg, max) {
+      width: 100%;
+      min-width: 100%;
+      margin-top: 30px;
+    }
+
+    @include screen(sm, max) {
+      padding: 20px;
     }
   }
 }
