@@ -12,10 +12,10 @@
     padding: 30px;
     cursor: pointer;
     font-size: 14px;
-    transition: color $ease-main;
+    transition: background-color $ease-main, color $ease-main;
     box-shadow: 0px 0px 10px 2px #efefef;
     border-radius: 5px;
-    background: #fff;
+    background-color: #fff;
 
     &:not(:first-child) {
       margin-top: 20px;
