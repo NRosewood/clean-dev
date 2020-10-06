@@ -6,11 +6,11 @@ import { freeze, unfreeze } from '../../blocks/js-functions/freeze';
 
 export default () => {
   const close = document.querySelectorAll('.popup .close');
-  const closeButton = document.querySelector('#close');
+  // const closeButton = document.querySelector('#close');
   const openBtns = document.querySelectorAll('[data-open]');
   const popupsWrap = document.querySelector('.popups');
   const popups = document.querySelectorAll('[data-popup]');
-  const closeTargetArr = [closeButton, popupsWrap];
+  const closeTargetArr = [popupsWrap];
 
   [].forEach.call(close, item => closeTargetArr.push(item));
 
