@@ -10,17 +10,17 @@ mixin calculater()
               +e.group
                 h5 Тип уборки
                 label
-                  input(type="radio" name="type-cleaning" checked value="Генеральная уборка квартиры" data-price="от 2500 руб.")
+                  input(type="radio" name="type-cleaning" checked value="Генеральная уборка квартиры" data-price="2500")
                   span.check
                     +icon('check')
                   span Генеральная уборка квартиры
                 label
-                  input(type="radio" name="type-cleaning" value="Генеральная уборка комнаты" data-price="от 1500 руб.")
+                  input(type="radio" name="type-cleaning" value="Генеральная уборка комнаты" data-price="1500")
                   span.check
                     +icon('check')
                   span Генеральная уборка комнаты
                 label
-                  input(type="radio" name="type-cleaning" value="Уборка после ремонта" data-price="от 2700 руб.")
+                  input(type="radio" name="type-cleaning" value="Уборка после ремонта" data-price="2700")
                   span.check
                     +icon('check')
                   span Уборка после ремонта
@@ -35,22 +35,22 @@ mixin calculater()
               +e.group
                 h5 Дополнительные услуги
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" value="Погладить одежду" data-price="1000")
                   span.check
                     +icon('check')
                   span Погладить одежду
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" value="Помыть посуду" data-price="1500")
                   span.check
                     +icon('check')
                   span Помыть посуду
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" value="Помыть окна" data-price="2000")
                   span.check
                     +icon('check')
                   span Помыть окна
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" value="Убрать в шкафу" data-price="2500")
                   span.check
                     +icon('check')
                   span Убрать в шкафу
@@ -58,7 +58,7 @@ mixin calculater()
               +e.group
                 h5 Ваши пожелания
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" value="Требуется химчистка" data-price="3000")
                   span.check
                     +icon('check')
                   span Требуется химчистка
@@ -80,12 +80,12 @@ mixin calculater()
 
           +e.info
             h5 Вы выбрали
-            ul
+            ul#resultList
               li(data-type) Генеральная уборка
-              li(data-count) 1 комната
-              li(data-time) 2 часа
+              li(data-count) 1 ком.
+              //- li(data-time) 2 часа
             .payment
               span Итого
-              span#price от 1 490 руб.
+              span#price от 2500 руб.
             span.form-btn.is-active#nextStep Следующий шаг
             input(type="submit" value="Заказать").form-btn

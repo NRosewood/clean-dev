@@ -1,14 +1,19 @@
+/* eslint-disable */
 export default () => {
   /* TYPE CLANING */
 
   const typeCleaning = document.querySelectorAll('input[name="type-cleaning"]');
   const typeResult = document.querySelector('[data-type]');
   const price = document.querySelector('#price');
+  let costDefault = 2500;
+  let costOther = 0;
 
   [].forEach.call(typeCleaning, item => {
     item.onclick = () => {
       typeResult.innerHTML = item.getAttribute('value');
-      price.innerHTML = item.getAttribute('data-price');
+
+      costDefault = item.getAttribute('data-price');
+      price.innerHTML = 'от' + ' ' + (+costDefault + +costOther) + ' ' + 'руб.';
     };
   });
 
@@ -46,4 +51,23 @@ export default () => {
       elem.classList.toggle('is-active');
     });
   };
+
+  /* OTHER SERVICES */
+  const otherServices = document.querySelectorAll('.calculater input[type="checkbox"]');
+  const resulList = document.querySelector('#resultList');
+
+  [].forEach.call(otherServices, servicesPoint => {
+    servicesPoint.onclick = () => {
+      if (servicesPoint.checked) {
+        costOther = +costOther + +servicesPoint.getAttribute('data-price');
+        price.innerHTML = 'от' + ' ' + (+costDefault + +costOther) + ' ' + 'руб.';
+      }
+
+      if (!servicesPoint.checked) {
+        costOther = +costOther - +servicesPoint.getAttribute('data-price');
+        price.innerHTML = 'от' + ' ' + (+costDefault + +costOther) + ' ' + 'руб.';
+      }
+    };
+  });
 };
+/* eslint-enable */
