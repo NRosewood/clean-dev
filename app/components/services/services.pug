@@ -1,0 +1,70 @@
+mixin services()
+  +b.SECTION.services&attributes(attributes)
+    .container
+      .title
+        h2 Наши услуги
+        p Клинеры приезжают в назначенное время со
+          br
+          | всем необходимым и сразу приступают к
+          br
+          | уборке
+
+      .row
+        .col-lg-5
+          +tabs
+            +tab(data-tab-target="first").active
+              .icon
+                +icon('wash')
+              .content
+                h4 Генеральная уборка квартиры
+                p Комплаксная уборка комнаты и мебели
+                .info
+                  span.price от  2 500 руб.
+                  +link('arrow-link') Подробнее
+            +tab(data-tab-target="second")
+              .icon
+                +icon('mop')
+              .content
+                h4 Генеральная уборка комнаты
+                p Комплаксная уборка комнаты и мебели
+                .info
+                  span.price от  1 500 руб.
+                  +link('arrow-link') Подробнее
+
+            +tab(data-tab-target="third")
+              .icon
+                +icon('clean-services')
+              .content
+                h4 Убока после ремонта
+                p Комплаксная уборка комнат и мебели
+                .info
+                  span.price от  2 700 руб.
+                  +link('arrow-link') Подробнее
+
+          +button.--full Рассчитать стоимость
+
+        .col-lg-7
+          +tabs-content
+            +tab-wrapper(data-tab="first" data-tab-group="services").active
+              .image
+                +bg-image('services/1.jpg')
+              +e.point.--first.--right Смываем различные загрязнения с дверей
+              +e.point.--second.--top Удаляем пыль с вертикальных поверхностей и техники
+              +e.point.--third.--bottom Очищаем плинтуса и радиаторы отопления
+              +e.point.--fourth.--bottom Моем пол специальными средствами
+
+            +tab-wrapper(data-tab="second" data-tab-group="services")
+              .image
+                +bg-image('services/2.jpg')
+              +e.point.--first.--left Чистим люстры, стеклянные поверхности
+              +e.point.--second.--top Удаляем пыль с поверхностей, выключаталей, ручек
+              +e.point.--third.--bottom Застилаем кровать и складываем одежду
+              +e.point.--fourth.--bottom Моем пол и плинтус. Чистим ковра
+
+            +tab-wrapper(data-tab="third" data-tab-group="services")
+              .image
+                +bg-image('services/3.jpg')
+              +e.point.--first.--left Удаляем все следы стройматериалов со стен
+              +e.point.--second.--bottom Убираем весь мелкий мусор и пыль
+              +e.point.--third.--top Удаляем пыль с подоконников и батареи
+              +e.point.--fourth.--bottom Моем пол и плинтуса специальными средствами

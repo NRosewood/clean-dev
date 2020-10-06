@@ -1,0 +1,31 @@
+mixin order()
+  +b.SECTION.order&attributes(attributes)
+    .container
+      .title
+        h2 Как заказать уборку?
+        p Три простых шага для к чистоте и порядку
+
+      +e.items
+        .decor
+          img(src="assets/images/order-decor.png" alt="decor")
+
+        +e.item
+          .icon
+            +icon('calculator')
+          .name Рассчитайте стоимость
+          .descr Рассчитайте стоимость на сайте и укажите свои контакты
+
+        +e.item
+          .icon
+            +icon('headset')
+          .name Согласуйте с нами
+          .descr Наш менеджер свяжетяся с вами и уточнит время и дату уборки
+
+        +e.item
+          .icon
+            +icon('sponge')
+          .name Уборка
+          .descr Клинерыприедут к вам вовремя в назначенный день
+      +button Рассчитать стоимость
+
+

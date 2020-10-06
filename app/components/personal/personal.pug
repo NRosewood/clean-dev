@@ -1,0 +1,58 @@
+mixin personal()
+  +b.SECTION.personal&attributes(attributes)
+    .container
+      .title
+        h2 Сотрудники
+        p Наши клинеры — это сертифицированные,
+          br
+          | высококвалифицированные вежливые и
+          br
+          | приветливые люди
+
+      +e.slider
+        +slider(true).js-personal-slider
+
+          +slide
+            +e.card
+              .avatar
+                +bg-image('personal/1.jpg')
+              .info
+                .name Ольга Пирогова
+                .wrapp
+                  span Клинер
+                  span 120 уборок
+                  span
+                    - for (var i=0;i<5;i++)
+                      +icon('star')
+          +slide
+            +e.card
+              .avatar
+                +bg-image('personal/2.jpg')
+              .info
+                .name Валентин Гришко
+                .wrapp
+                  span Клинер
+                  span 100 уборок
+                  span
+                    - for (var i=0;i<5;i++)
+                      +icon('star')
+          +slide
+            +e.card
+              .avatar
+                +bg-image('personal/3.jpg')
+              .info
+                .name Марина Сидорова
+                .wrapp
+                  span Клинер
+                  span 110 уборок
+                  span
+                    - for (var i=0;i<5;i++)
+                      +icon('star')
+
+        .slider-btn.slider-btn--prev.personal-prev
+          +icon('arrow-slider')
+        .slider-btn.slider-btn--next.personal-next
+          +icon('arrow-slider')
+
+
+

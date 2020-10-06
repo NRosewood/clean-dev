@@ -1,0 +1,11 @@
+mixin accordion
+  +b.accordion&attributes(attributes).js-accordion
+    block
+
+mixin accordion-button
+  +e.button&attributes(attributes).js-accordion-button
+    block
+
+mixin accordion-content
+  +e.content&attributes(attributes).js-accordion-content
+    block

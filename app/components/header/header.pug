@@ -1,0 +1,14 @@
+mixin header()
+  +b.HEADER.header&attributes(attributes)
+    .container
+      +logo
+      +select-block
+      +navigation
+      +e.contacts
+        a(href="tel:88005553535")
+          +icon('phone')
+          span 8 800 555 35 35
+        button
+          +icon('phone')
+          span Перезвоните мне
+        .burger

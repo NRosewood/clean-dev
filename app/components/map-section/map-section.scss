@@ -1,0 +1,14 @@
+.map-section {
+  padding-bottom: 0;
+
+  .map {
+    position: relative;
+
+    @include ratio(1920, 500);
+
+    img,
+    iframe {
+      @include fill-img;
+    }
+  }
+}

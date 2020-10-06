@@ -1,0 +1,91 @@
+mixin calculater()
+  +b.SECTION.calculater&attributes(attributes)
+    .container
+      +e.card
+        h4 Расчет стоимости уборки
+
+        form
+          +e.steps
+            .step-first.is-active
+              +e.group
+                h5 Тип уборки
+                label
+                  input(type="radio" name="type-cleaning" checked value="Генеральная уборка квартиры" data-price="от 2500 руб.")
+                  span.check
+                    +icon('check')
+                  span Генеральная уборка квартиры
+                label
+                  input(type="radio" name="type-cleaning" value="Генеральная уборка комнаты" data-price="от 1500 руб.")
+                  span.check
+                    +icon('check')
+                  span Генеральная уборка комнаты
+                label
+                  input(type="radio" name="type-cleaning" value="Уборка после ремонта" data-price="от 2700 руб.")
+                  span.check
+                    +icon('check')
+                  span Уборка после ремонта
+
+              +e.group.--row
+                h5 Количество комнат
+                .counter
+                  .calc-btn.calc-btn--minus
+                  span.counter-result 1
+                  .calc-btn.calc-btn--plus
+
+              +e.group
+                h5 Дополнительные услуги
+                label
+                  input(type="checkbox")
+                  span.check
+                    +icon('check')
+                  span Погладить одежду
+                label
+                  input(type="checkbox")
+                  span.check
+                    +icon('check')
+                  span Помыть посуду
+                label
+                  input(type="checkbox")
+                  span.check
+                    +icon('check')
+                  span Помыть окна
+                label
+                  input(type="checkbox")
+                  span.check
+                    +icon('check')
+                  span Убрать в шкафу
+
+              +e.group
+                h5 Ваши пожелания
+                label
+                  input(type="checkbox")
+                  span.check
+                    +icon('check')
+                  span Требуется химчистка
+
+            .step-second
+              +e.group
+                h5 Контактные данные:
+                .form__inputbox
+                  input.form__input(type="text" placeholder="Ваше имя")
+                .form__inputbox
+                  input.form__input(type="text" placeholder="Ваш номер телефона")
+              +e.group
+                h5 Адрес:
+                .form__inputbox
+                  input.form__input(type="text" placeholder="Ваше имя")
+                .form__inputbox
+                  textarea( cols="30" rows="10" placeholder="Комментарий").form__input
+
+
+          +e.info
+            h5 Вы выбрали
+            ul
+              li(data-type) Генеральная уборка
+              li(data-count) 1 комната
+              li(data-time) 2 часа
+            .payment
+              span Итого
+              span#price от 1 490 руб.
+            span.form-btn.is-active Следующий шаг
+            input(type="submit" value="Заказать").form-btn

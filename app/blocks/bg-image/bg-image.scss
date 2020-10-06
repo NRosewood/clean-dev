@@ -1,0 +1,8 @@
+.bg-image {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    @include fill-img;
+  }
+}

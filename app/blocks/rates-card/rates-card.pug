@@ -1,0 +1,15 @@
+mixin rates-card(data)
+  +b.rates-card&attributes(attributes)(class=data.full&&'--full')
+    +e.bg
+      .image
+        img(src=`assets/images/rates/${data.image}` alt="rates-card-image")
+    +e.wrapp
+      +e.title
+        span= data.name
+        +e.icon
+          +icon(data.icon)
+      +e.content
+        +e.hover-effect
+          button.btn Заказать уборку +
+        +e.text= data.text
+        +e.price= data.price

@@ -1,0 +1,4 @@
+mixin price-info(data)
+  +b.price-info&attributes(attributes)(class=data.reverse&&'--reverse')
+    span= data.text
+    +icon('search')

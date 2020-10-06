@@ -1,0 +1,14 @@
+mixin banner()
+  +b.SECTION.banner&attributes(attributes)
+    .container
+      +e.card
+        +bg-image('banner-bg.jpg')
+
+        .content
+          h2.title Акция
+          p.text
+            span Дарим 15% скидку
+            | #{' '} на первую
+            br
+            | уборку вашего помещения
+          +button Рассчитать стоимость

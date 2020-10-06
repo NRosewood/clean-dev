@@ -1,0 +1,6 @@
+mixin link(icon)
+  +b.A.link&attributes(attributes)
+    +e.SPAN.text
+      block
+    if icon
+      +icon(icon).link__icon

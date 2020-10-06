@@ -1,0 +1,131 @@
+.services {
+  $b: &;
+
+  .container {
+    .row {
+      margin-top: 60px;
+    }
+  }
+
+  .button {
+    @include screen(lg, max) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__point {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 14px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    line-height: 16px;
+
+    @include screen(xs, max) {
+      display: none;
+    }
+
+    &::after {
+      @include pseudo;
+      transform: rotate(45deg);
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+    }
+
+    &--right::after {
+      top: 16px;
+      right: -4px;
+    }
+
+    &--left::after {
+      top: 16px;
+      left: -4px;
+    }
+
+    &--top::after {
+      top: -4px;
+      left: 16px;
+    }
+
+    &--bottom::after {
+      bottom: -4px;
+      left: 16px;
+    }
+  }
+
+  [data-tab='first'] {
+    #{$b}__point {
+      &--first {
+        max-width: 163px;
+        @include absolute-position(25%, 27%, auto, auto);
+      }
+
+      &--second {
+        max-width: 208px;
+        @include absolute-position(45%, auto, auto, 22%);
+      }
+
+      &--third {
+        max-width: 166px;
+        @include absolute-position(auto, 10%, 26%, auto);
+      }
+
+      &--fourth {
+        max-width: 180px;
+        @include absolute-position(auto, auto, 22%, 10%);
+      }
+    }
+  }
+
+  [data-tab='second'] {
+    #{$b}__point {
+      &--first {
+        max-width: 177px;
+        @include absolute-position(28%, 15%, auto, auto);
+      }
+
+      &--second {
+        max-width: 219px;
+        @include absolute-position(51%, 2%, auto, auto);
+      }
+
+      &--third {
+        max-width: 157px;
+        @include absolute-position(auto, 2%, 26%, auto);
+      }
+
+      &--fourth {
+        max-width: 153px;
+        @include absolute-position(auto, auto, 12%, 25%);
+      }
+    }
+  }
+
+  [data-tab='third'] {
+    #{$b}__point {
+      &--first {
+        max-width: 177px;
+        @include absolute-position(22%, auto, auto, 10%);
+      }
+
+      &--second {
+        max-width: 157px;
+        @include absolute-position(22%, auto, auto, 58%);
+      }
+
+      &--third {
+        max-width: 219px;
+        @include absolute-position(auto, 18%, 40%, auto);
+      }
+
+      &--fourth {
+        max-width: 191px;
+        @include absolute-position(auto, auto, 12%, 25%);
+      }
+    }
+  }
+}

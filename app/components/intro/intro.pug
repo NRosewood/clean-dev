@@ -1,0 +1,36 @@
+mixin intro()
+  +b.SECTION.intro&attributes(attributes)
+    +bg-image('intro-bg.jpg')
+
+    .container
+      .row.align-items-center
+        .col-lg-8
+          h1 Пофессиональная
+            span.blue #{' '} уборка
+            br
+            |
+            span от потолка до потолка
+
+          p Профессиональные клинеры аккуратно и быстро проведут уборку, включая химчистку мебели
+
+          +button Рассчитать стоимость
+
+
+      .row
+        .col-md-3
+          +e.feature
+            .icon
+              +icon('rubber')
+            .info 4 года на рынке уборки квартир и больше 30000 уборок в Москве
+
+        .col-md-3
+          +e.feature
+            .icon
+              +icon('brush')
+            .info В штате трудятся опытные работники со своим инвентарем
+
+        .col-md-3
+          +e.feature
+            .icon
+              +icon('clean')
+            .info Наша компания работает с лучшей техникой Karcher

@@ -1,0 +1,36 @@
+mixin features()
+  +b.SECTION.features&attributes(attributes)
+    .container
+      .title
+        h2 Почему стоит нам доверять?
+
+      .row
+        .col-lg-6
+          +e.image
+            +bg-image('features-image.jpg')
+
+        .col-lg-6
+          +e.items
+            +e.item
+              .icon
+                +icon('money')
+              .name Доступная цена
+              .descr Гибкая система цен при высоком качестве работы.
+
+            +e.item
+              .icon
+                +icon('broom')
+              .name Качественная уборка
+              .descr Профессиональное оборудование и средства
+
+            +e.item
+              .icon
+                +icon('clock')
+              .name Быстрая уборка
+              .descr Работаем 24 часа в сутки без выходных
+
+            +e.item
+              .icon
+                +icon('maid')
+              .name Постоянный сотрудник
+              .descr Закрепляем за вами постоянного исполнителя

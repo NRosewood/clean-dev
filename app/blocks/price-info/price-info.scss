@@ -1,0 +1,60 @@
+.price-info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #72d237;
+  overflow: hidden;
+  transition: background-color $ease-main, overflow $ease-main,
+    opacity $ease-main;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    transition: fill $ease-main;
+  }
+
+  span {
+    display: inline-block;
+    position: absolute;
+    min-width: 250px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 25px 20px;
+    right: -10px;
+    top: 50%;
+    transform: translate(100%, -50%);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &--reverse {
+    span {
+      left: -10px;
+      transform: translate(-100%, -50%);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fff;
+    overflow: visible;
+    z-index: 3;
+
+    svg {
+      fill: #72d237;
+    }
+  }
+
+  @include screen(md, max) {
+    display: none !important;
+  }
+}

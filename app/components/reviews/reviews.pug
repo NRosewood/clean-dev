@@ -1,0 +1,37 @@
+mixin reviews()
+  +b.SECTION.reviews&attributes(attributes)
+    .container
+      .title
+        h2 Отзывы
+        p Наша компания на рынке всего четыре
+          br
+          | года, но у нас много положительных
+          br
+          | отзывов
+
+      +e.slider
+        +slider(true).js-reviews-slider
+          +slide
+            +e.card
+              .head
+                span Юля Зайцева
+                span
+                  - for (var i=0;i<5;i++)
+                    +icon('star')
+              .descr
+                p Работала ваша сотрудница качественно, оперативно, не отвлекаясь ни на что. Работу выполнила на отлично. Добросовестный, вежливый сотрудник. Убрано все профессионально, спасибо!
+
+          +slide
+            +e.card
+              .head
+                span Мила Юсупова
+                span
+                  - for (var i=0;i<5;i++)
+                    +icon('star')
+              .descr
+                p Огромное спасибо за проделанную работу! Квартира сияет! Вся работа была проделана на совесть, очень аккуратно! Даже самые труднодоступные места блестят чистотой! Спасибо!
+
+        .slider-btn.slider-btn--prev.reviews-prev
+          +icon('arrow-slider')
+        .slider-btn.slider-btn--next.reviews-next
+          +icon('arrow-slider')

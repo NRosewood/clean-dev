@@ -1,0 +1,26 @@
+-
+  var dataNav = [
+    {
+      "name": "Услуги",
+      "path": "#projects"
+    },
+    {
+      "name": "Преимущества",
+      "path": "#rates"
+    },
+    {
+      "name": "Отзывы",
+      "path": "#reviews"
+    },
+    {
+      "name": "Контакт",
+      "path": "#contacts"
+    }
+  ];
+
+mixin navigation()
+  +b.NAV.navigation&attributes(attributes)
+    ul
+      each item in dataNav
+        li
+          a(href=item.path).js-scroll= item.name

@@ -1,0 +1,59 @@
+.features {
+  &__image {
+    position: relative;
+
+    .bg-image {
+      @include ratio(475, 304);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    margin-right: -40px;
+
+    @include screen(lg, max) {
+      padding-top: 40px;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    width: 50%;
+    padding-top: 40px;
+    padding-right: 40px;
+
+    .icon {
+      fill: $color-brend;
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .name {
+      margin-top: 15px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .descr {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    @include screen(lg, max) {
+      padding-top: 20px;
+      padding-right: 20px;
+    }
+
+    @include screen(sm, max) {
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+}

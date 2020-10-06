@@ -1,0 +1,237 @@
+.calculater {
+  $b: &;
+
+  h4 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &__card {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 2px #efefef;
+    border-radius: 5px;
+    padding: 50px;
+    overflow: hidden;
+
+    form {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 50px;
+
+      @include screen(md, max) {
+        flex-direction: column;
+      }
+
+      .step-first,
+      .step-second {
+        display: none;
+      }
+
+      .step-first.is-active,
+      .step-second.is-active {
+        display: block;
+      }
+    }
+
+    h5 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 25px;
+
+      + label,
+      + div {
+        display: inline-block;
+        margin-top: 22px;
+      }
+    }
+
+    #{$b}__group {
+      display: flex;
+      flex-direction: column;
+      min-width: 329px;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      &--row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        h5 + div,
+        h5 + label {
+          margin-top: 0;
+        }
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-bottom: 19px;
+        }
+
+        input {
+          display: none;
+
+          &:checked + span svg {
+            opacity: 1;
+          }
+        }
+
+        .check {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          border: 1px solid #1976d2;
+          box-sizing: border-box;
+          border-radius: 5px;
+          margin-right: 10px;
+
+          svg {
+            fill: $color-brend;
+            width: 15px;
+            height: 15px;
+            opacity: 0;
+            transition: opacity $ease-main;
+          }
+        }
+
+        span {
+          font-size: 14px;
+          line-height: 25px;
+        }
+      }
+
+      .counter {
+        display: flex;
+        align-items: center;
+
+        .calc-btn {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+          background-color: #2196f3;
+          color: #fff;
+          transition: background-color $ease-main;
+
+          &::before,
+          &::after {
+            @include pseudo;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+          }
+
+          &::before {
+            width: 15px;
+            height: 2px;
+          }
+
+          &--plus {
+            &::after {
+              width: 2px;
+              height: 15px;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: $color-brend;
+          }
+        }
+
+        &-result {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    font-weight: 700;
+    background-color: $color-brend;
+    box-shadow: 0px 0px 10px 2px #efefef;
+    border-radius: 5px;
+    color: #fff;
+    padding: 40px;
+    min-width: 367px;
+
+    h5 {
+      font-size: 22px;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    ul {
+      font-size: 16px;
+      line-height: 25px;
+      margin-top: 20px;
+      margin-bottom: 25px;
+
+      li {
+        position: relative;
+        padding-left: 20px;
+
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+
+        &::before {
+          @include pseudo;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    .payment {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .form-btn {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      font-weight: 700;
+      padding: 14px 62px;
+      width: 247px;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 25px;
+      background-color: #fff;
+      color: $color-brend;
+      transition: color $ease-main;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+        color: #2196f3;
+      }
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+}

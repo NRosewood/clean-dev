@@ -1,0 +1,165 @@
+$paddingLeftRate: 48px;
+
+.rates-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: default;
+
+  $b: &;
+
+  &__bg {
+    max-height: 238px;
+
+    .image {
+      position: relative;
+      overflow: hidden;
+      @include ratio(350, 238);
+
+      img {
+        @include fill-img;
+      }
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: $paddingLeftRate;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 25px;
+    background-color: $color-brend;
+    color: #fff;
+    fill: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    z-index: 2;
+
+    #{$b}__icon {
+      svg {
+        width: 35px;
+        height: 40px;
+      }
+    }
+
+    @include screen(md, max) {
+      padding-right: 15px;
+      padding-left: 15px;
+      font-size: 18px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f2f6f8;
+    padding-left: $paddingLeftRate;
+    padding-bottom: 37px;
+    padding-top: 35px;
+    padding-right: $paddingLeftRate;
+
+    #{$b}__hover-effect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-brend;
+      transition: height $ease-main;
+      z-index: 2;
+
+      button {
+        display: block;
+        margin-top: auto;
+        padding: 10px 15px;
+        font-weight: 700;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        opacity: 0;
+        transition: opacity $ease-main;
+      }
+    }
+
+    #{$b}__text {
+      font-size: 18px;
+      line-height: 1.38;
+      margin-bottom: 50px;
+      transition: color $ease-main;
+      z-index: 3;
+    }
+
+    #{$b}__price {
+      margin-top: auto;
+      font-weight: 700;
+      font-size: 30px;
+    }
+
+    @include screen(md, max) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @include screen(lg, min) {
+    &--full {
+      flex-direction: row;
+
+      #{$b}__bg {
+        width: 443px;
+        flex-shrink: 0;
+
+        .image {
+          max-height: 350px;
+          @include ratio(443, 350);
+        }
+      }
+
+      #{$b}__wrapp {
+        width: 100%;
+      }
+    }
+  }
+
+  &:hover {
+    #{$b}__content {
+      #{$b}__hover-effect {
+        height: 100%;
+        padding-left: $paddingLeftRate;
+        padding-bottom: 37px;
+        padding-top: 35px;
+        padding-right: $paddingLeftRate;
+
+        button {
+          transition-delay: 0.4s;
+          opacity: 1;
+        }
+
+        @include screen(md, max) {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+      }
+
+      #{$b}__text {
+        color: #fff;
+      }
+    }
+  }
+}

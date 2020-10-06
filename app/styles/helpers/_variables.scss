@@ -1,0 +1,42 @@
+// Здесь используем комментарии только через "//", т.к. они нам не нужны в итоговом css-файле
+
+// ##########
+// Базовые настройки сетки сайта
+// ##########
+$container-width: 1140px; // Максимальная ширина контейнера контента
+$container-padding: 20px; // Отступы слева и справа у контейнера
+$grid-container-width: 100%; // Ширина контейнера сетки
+$grid-cols: 12; // Количество колонок в сетке
+$grid-gap: 20px; // Расстояние между колонками
+$grid-gap-vertical: 20px; // Расстояние между строками в сетке
+$breakpoints: (
+  'xl': 1200px,
+  'lg': 992px,
+  'md': 768px,
+  'sm': 576px,
+  'xs': 480px,
+);
+
+// ##########
+// Цвета
+// ##########
+$color-basic: #1a1a1a; // Основной цвет текста (применяется к body)
+$color-placeholder: #777; // Основной цвет для placeholder
+$color-input: black; // Основной цвет input, select и textarea
+$color-main: #2252d8; // Основной фирменный цвет
+$color-border: #ccc; // Основной цвет границ таблиц, секций
+
+$color-brend: #1976d2;
+$color-section: #f8f9fb;
+$color-hover: #2196f3;
+
+// ##########
+// Transitions
+// ##########
+$ease-main: 0.2s ease;
+
+// ##########
+// Шрифты
+// ##########
+$font-main: 'Open Sans', sans-serif; // Основной шрифт сайта
+$font-second: 'Montserrat', sans-serif; // Дополнительный шрифт

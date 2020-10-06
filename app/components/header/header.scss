@@ -1,0 +1,170 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 15px 0;
+  background-color: #fff;
+  z-index: 5;
+
+  $b: &;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 3;
+
+    a {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 23px;
+
+      svg {
+        fill: $color-brend;
+        width: 23px;
+        height: 23px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        color: #64647a;
+      }
+    }
+
+    button {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 23px;
+      background-color: #fff;
+      color: $color-brend;
+      border-radius: 5px;
+      padding: 10px 15px;
+      border: 1px solid $color-brend;
+      margin-left: 29px;
+
+      svg {
+        display: none;
+        width: 15px;
+        height: 15px;
+        fill: $color-brend;
+      }
+
+      @include screen(lg, max) {
+        span {
+          display: none;
+        }
+
+        svg {
+          display: block;
+        }
+      }
+    }
+
+    @include screen(xl, max) {
+      a {
+        display: none;
+      }
+    }
+  }
+
+  .burger {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-left: 30px;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      left: 0;
+      height: 3px;
+      background-color: $color-basic;
+      transition: all $ease-main;
+    }
+
+    &::before {
+      width: 100%;
+      top: 0;
+    }
+
+    &::after {
+      width: 75%;
+      bottom: 0;
+    }
+
+    &.is-active {
+      &::before,
+      &::after {
+        width: 100%;
+      }
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+      }
+    }
+
+    @include screen(lg, min) {
+      display: none;
+    }
+  }
+
+  &.is-scrolled {
+    background-color: rgba(249, 249, 255, 0.9);
+
+    @include screen(xl, min) {
+      .logo {
+        &__descr {
+          display: none;
+        }
+      }
+
+      .navigation {
+        ul {
+          li {
+            &:not(:first-child) {
+              margin-left: 142px;
+            }
+          }
+        }
+      }
+
+      .select-block {
+        display: none;
+      }
+
+      #{$b}__contacts {
+        a {
+          svg {
+            display: none;
+          }
+        }
+
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include screen(lg, max) {
+    .select-block {
+      display: none;
+    }
+  }
+}

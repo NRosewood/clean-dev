@@ -1,0 +1,62 @@
+.select-block {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    svg {
+      fill: $color-brend;
+      width: 14px;
+      height: 30px;
+    }
+  }
+
+  .select {
+    position: relative;
+    font-size: 14px;
+    line-height: 19px;
+
+    @include screen(md, max) {
+      font-size: 12px;
+    }
+
+    &__gap {
+      position: relative;
+      min-width: 135px;
+      padding: 9px 10px;
+      cursor: pointer;
+
+      @include screen(md, max) {
+        min-width: 180px;
+      }
+
+      &.on {
+      }
+    }
+
+    &__list {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: #fff;
+      padding: 9px 10px;
+      border-radius: 0 0 5px 5px;
+      max-height: 200px;
+      overflow: auto;
+      // box-shadow: 0px 0px 10px 2px #efefef;
+    }
+
+    &__item {
+      transition: opacity $ease-main;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+}

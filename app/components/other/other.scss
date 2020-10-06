@@ -1,0 +1,57 @@
+.other {
+  .container {
+    .row {
+      margin-top: 60px;
+
+      @include screen(lg, max) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__card {
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 2px #efefef;
+    border-radius: 5px;
+    padding: 30px;
+    transition: background-color $ease-main;
+
+    .icon {
+      fill: $color-brend;
+
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .name {
+      margin-top: 25px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      transition: color $ease-main;
+    }
+
+    .price {
+      margin-top: 15px;
+      font-size: 22px;
+      line-height: 21px;
+      transition: color $ease-main;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-brend;
+      color: #fff;
+
+      .icon {
+        fill: #fff;
+      }
+    }
+
+    @include screen(lg, max) {
+      margin-top: 30px;
+    }
+  }
+}

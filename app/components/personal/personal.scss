@@ -1,0 +1,60 @@
+.personal {
+  &__slider {
+    position: relative;
+    margin: -20px;
+
+    .swiper {
+      &-container {
+        padding: 20px;
+      }
+    }
+  }
+
+  &__card {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 2px #efefef;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .avatar {
+      .bg-image {
+        @include ratio(314, 258);
+      }
+    }
+
+    .info {
+      padding: 20px 10px;
+
+      .name {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 40px;
+      }
+
+      .wrapp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          line-height: 40px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffab48;
+          }
+        }
+
+        @include screen(xs, max) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}

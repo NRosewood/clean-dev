@@ -1,0 +1,53 @@
+.form {
+  display: block;
+  background-color: #fff;
+  padding: 55px 95px;
+
+  $b: &;
+
+  &__inputbox {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__label {
+    color: $color-basic;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  &__input {
+    padding: 15px 20px;
+    width: 100%;
+    line-height: 1;
+    background-color: #fff;
+    color: #727272;
+    font-size: 14px;
+    border: 1px solid #1976d2;
+    border-radius: 5px;
+
+    &::placeholder {
+      color: #727272;
+      font-size: 14px;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: rgba(9, 178, 235, 0.8);
+    }
+  }
+
+  &__textarea {
+    @extend .form__input;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+    min-height: 150px;
+    resize: vertical;
+  }
+}
