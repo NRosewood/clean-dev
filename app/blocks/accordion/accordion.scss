@@ -5,6 +5,10 @@
 
   &:not(:first-child) {
     margin-top: 30px;
+
+    @include screen(md, max) {
+      margin-top: 10px;
+    }
   }
 
   &__button {
