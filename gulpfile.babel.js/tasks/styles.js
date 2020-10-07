@@ -9,7 +9,13 @@ import rename from 'gulp-rename';
 import autoprefixer from 'autoprefixer';
 import discardComments from 'postcss-discard-comments';
 import postcssImport from 'postcss-import';
-import { IS_DEBUG, CSS_ENTRY, CSS_OUTPUT } from './config';
+import { 
+  IS_DEBUG, 
+  CSS_ENTRY, 
+  CSS_VENDOR_ENTRY, 
+  CSS_OUTPUT, 
+  CSS_VENDOR_OUTPUT 
+} from './config';
 
 const plugins = [
   autoprefixer(),
@@ -17,7 +23,8 @@ const plugins = [
   postcssImport(),
 ];
 
-export default () => gulp.src(CSS_ENTRY)
+export default () =>
+  gulp.src([CSS_ENTRY, CSS_VENDOR_ENTRY])
   .pipe(gulpIf(IS_DEBUG, sourcemaps.init()))
   .pipe(sassGlob())
   .pipe(sass().on('error', sass.logError))
@@ -28,3 +35,4 @@ export default () => gulp.src(CSS_ENTRY)
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulpIf(IS_DEBUG, sourcemaps.write('./')))
   .pipe(gulp.dest(CSS_OUTPUT));
+
