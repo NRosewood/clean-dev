@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { Swiper, Navigation, Pagination } from 'swiper';
+import $ from "jquery";
 
 Swiper.use([Navigation, Pagination]);
 
@@ -15,7 +16,7 @@ export default () => {
     speed: 700,
     // slidesPerView: 3,
     spaceBetween: 30,
-    loop: true,
+    loop: false,
     navigation: {
       prevEl: '.personal-prev',
       nextEl: '.personal-next',
@@ -37,6 +38,14 @@ export default () => {
       }
     },
   });
+
+  /* Swiper dosn't provide API to hide slider navigation manually
+   * So.. We just hack it. Bad, but who cares...
+   */
+  
+  $('.personal__slider').find('.personal-prev').css({display: 'none'});;
+  $('.personal__slider').find('.personal-next').css({display: 'none'});;
+  $('.personal__slider').find('.swiper-pagination').css({display: 'none'});
 
   const reviewslSlider = new Swiper('.js-reviews-slider', {
     speed: 700,
